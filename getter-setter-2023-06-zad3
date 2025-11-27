@@ -1,0 +1,31 @@
+public class Film
+{
+    private string tytul = "";
+    private int liczba_wypozyczen = 0;
+    public string _tytul
+    {
+        get { return tytul; }
+        set { tytul = value; }
+    }
+    public int _liczba_wypozyczen
+    {
+        get { return liczba_wypozyczen; }
+    }
+    public void inkrementuj() {
+        liczba_wypozyczen += 1;
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        Film f1 = new Film();
+        Console.WriteLine(f1._tytul);
+        Console.WriteLine(f1._liczba_wypozyczen);
+        f1._tytul = "Formula 1";
+        Console.WriteLine(f1._tytul);
+        f1.inkrementuj();
+        Console.WriteLine(f1._liczba_wypozyczen);
+    }
+}
