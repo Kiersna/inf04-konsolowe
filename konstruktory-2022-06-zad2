@@ -1,0 +1,51 @@
+
+public class Osoba
+{
+    private int id;
+    private string imie;
+    public static int ilosc_instancji = 0;
+
+    public Osoba()
+    {
+        id = 0;
+        imie = "";
+        ilosc_instancji += 1;
+    }
+    public Osoba(int _id, string imie)
+    {
+        id = _id;
+        this.imie = imie;
+        ilosc_instancji += 1;
+    }
+    public Osoba(Osoba o1)
+    {
+        id = o1.id;
+        imie = o1.imie;
+        ilosc_instancji += 1;
+    }
+    public void wypisz_imie(string imie2)
+    {
+        if(imie == "")
+        {
+            imie = "Brak danych";
+        }
+        Console.WriteLine($"Cześć {imie2}, mam na imię {imie}");
+    }
+}
+public class Program
+{
+    public static void Main()
+    {
+        Console.WriteLine($"Liczba zarejestrowanych osób to {Osoba.ilosc_instancji}");
+        Osoba o1 = new Osoba();
+        Console.WriteLine("Podaj id a potem imie: ");
+        Osoba o2 = new Osoba(int.Parse(Console.ReadLine()), Console.ReadLine());
+        Osoba o3 = new Osoba(o2);
+        o1.wypisz_imie("Jan");
+        o2.wypisz_imie("Jan");
+        o3.wypisz_imie("Jan");
+        Console.WriteLine($"Liczba zarejestrowanych osób to {Osoba.ilosc_instancji}");
+
+            
+    }
+}
