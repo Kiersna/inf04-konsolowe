@@ -7,14 +7,23 @@ public class HelloWorld
 {
     public static void Main(string[] args)
     {
-        Console.WriteLine(cezar("pozdrowienia", 1));
+        Console.WriteLine(cezar("aaa", -1));
     }
-    private static string cezar(string slowo, int klucz){
+    private static string cezar(string slowo, int klucz)
+    {
         string alfabet = "abcdefghijklmnoprstuwvxyz";
         string nowe_slowo = "";
-        foreach(char litera in slowo){
+        foreach (char litera in slowo)
+        {
             int index = (alfabet.IndexOf(litera) + klucz) % alfabet.Length;
-            nowe_slowo += alfabet[index];
+            if (index < 0)
+            {
+                nowe_slowo += alfabet[alfabet.Length + index];
+            }
+            else
+            {
+                nowe_slowo += alfabet[index];
+            }
         }
         return nowe_slowo;
     }
