@@ -10,7 +10,7 @@ public class HelloWorld
         Console.WriteLine(cezar("pozdrowienia", 1));
     }
     private static string cezar(string slowo, int klucz){
-        string alfabet = "abcdefghijklmnoprstuvxyz";
+        string alfabet = "abcdefghijklmnoprstuwvxyz";
         string nowe_slowo = "";
         foreach(char litera in slowo){
             int index = (alfabet.IndexOf(litera) + klucz) % alfabet.Length;
